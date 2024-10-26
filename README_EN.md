@@ -5,5 +5,3 @@
 > Original project author:[@ZYYO666](https://github.com/ZYYO666)
 
 Personal Coolapk: http://www.coolapk.com/u/16164375           Due to its own limitations, the personal website may not be able to jump normally.
-
-Source of underlined content: https://github.com/mangranbuzhi/2543.github.io/blob/main/README.md
