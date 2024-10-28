@@ -4,4 +4,5 @@
 
 > 原项目作者[@ZYYO666](https://github.com/ZYYO666)
 
-个人酷安：http://www.coolapk.com/u/16164375     因为其本身限制，个人网站内可能无法正常跳转
+个人酷安：http://www.coolapk.com/u/16164375  
+因为其本身限制，个人网站内可能无法正常跳转
