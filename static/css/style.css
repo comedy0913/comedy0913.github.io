@@ -660,3 +660,8 @@ footer {
 .onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-switch {
     right: 50%;
 }
+.highlight {
+    color: #D2691E; /* 这里选择了巧克力色作为例子，你可以根据喜好更改颜色 */
+    font-weight: bold; /* 加粗文本 */
+    text-decoration: underline; /* 添加下划线 */
+}
