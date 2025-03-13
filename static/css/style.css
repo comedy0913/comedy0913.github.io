@@ -162,6 +162,21 @@ body {
     font-size: 18px;
     margin-right: 10px;
 }
+.left-des-item1 {
+    display: flex;
+    align-items: center;
+    line-height: 20px;
+    font-size: 12px;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+.left-des-item1 i,.left-des-item1 svg{
+    width: 16px;
+    height: 16px;
+    fill:var(--fill);
+    font-size: 18px;
+    margin-right: 10px;
+}
 .left-tag {
     display: flex;
     flex-direction: row;
@@ -422,13 +437,13 @@ body {
     font-size: 18px;
 }
 .projectItemLeft p {
-    font-size: 12px;
-    margin-top: 15px;
+    font-size: 13px;
+    margin-top: 10px;
     color: var(--item_left_text_color);
 }
 .projectItemLeft h1 {
     font-weight: normal;
-    font-size: 16px;
+    font-size: 18px;
     margin: 0px;
     transition: font-size 0.4s ease;
     color: var(--item_left_title_color);
@@ -444,7 +459,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20%;
+    width: 30%;
     height: 100%;
 }
 .projectItemRight img {
@@ -667,7 +682,7 @@ footer {
 }
 
 /* 整体卡片容器 */
-.glassCard {
+.publicationCard {
     display: flex;
     background-color: rgba(255, 255, 255, 0.1); /* 半透明背景 */
     border-radius: 16px;
@@ -687,73 +702,142 @@ box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
 
 /* 左侧图片区域 */
 .glassImage {
-flex: 0 0 40%;
-max-width: 40%;
-display: flex;
-align-items: center;
-justify-content: center;
-background-color: rgba(255, 255, 255, 0.2); /* 半透明背景 */
-border-radius: 12px;
-padding: 0px;
-margin-right: 24px;
+    flex: 0 0 40%;
+    max-width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.2); /* 半透明背景 */
+    border-radius: 12px;
+    padding: 0px;
+    margin-right: 24px;
 }
 
 .glassImage img {
-width: 100%;
-border-radius: 8px;
-object-fit: cover;
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
 /* 右侧内容区域 */
 .glassContent {
-flex: 1;
-display: flex;
-flex-direction: column;
-justify-content: space-between;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* 标题 */
 .glassTitle {
-font-size: 20px; /* 更大的字体 */
-font-weight: 600;
-margin: 0 0 12px 0;
-color: #ffffff; /* 白色文字 */
+    font-size: 20px; /* 更大的字体 */
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    color: #ffffff; /* 白色文字 */
 }
 
 .glassTitle a {
-color: inherit;
-text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 .glassTitle a:hover {
-color: #aad8ff; /* 浅蓝色悬停效果 */
-text-decoration: underline;
+    color: #aad8ff; /* 浅蓝色悬停效果 */
+    text-decoration: underline;
 }
 
 /* 作者信息 */
 .glassAuthors {
-font-size: 20px; /* 更大的字体 */
-color: rgba(255, 255, 255, 0.8); /* 半透明白色 */
-margin: 0px;
+    font-size: 20px; /* 更大的字体 */
+    color: rgba(255, 255, 255, 0.8); /* 半透明白色 */
+    margin: 0px;
 }
 
 /* 链接区域 */
 .glassActions {
-margin-top: 20px;
+    margin-top: 20px;
 }
 
 .glassLink {
-font-size: 19px; /* 更大的字体 */
-color: #ffffff; /* 白色文字 */
-text-decoration: none;
-margin-right: 25px;
-padding: 0px 0px;
-border: 1px solid rgba(255, 255, 255, 0.3); /* 半透明边框 */
-border-radius: 6px;
-transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 19px; /* 更大的字体 */
+    color: #ffffff; /* 白色文字 */
+    text-decoration: none;
+    margin-right: 25px;
+    padding: 0px 0px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* 半透明边框 */
+    border-radius: 6px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .glassLink:hover {
-background-color: rgba(255, 255, 255, 0.2); /* 半透明背景 */
-color: #aad8ff; /* 浅蓝色悬停效果 */
+    background-color: rgba(255, 255, 255, 0.2); /* 半透明背景 */
+    color: #aad8ff; /* 浅蓝色悬停效果 */
 }
+
+/* 教育经历模块容器 */
+.educationSection {
+    margin: 40px 0;
+  }
+  
+  .sectionTitle {
+    font-size: 28px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  
+  /* 教育卡片 */
+  .educationCard {
+    display: flex;
+    background-color: var(--item_bg_color); /* 半透明背景 */
+    border-radius: 16px;
+    backdrop-filter: blur(10px); /* 毛玻璃效果 */
+    -webkit-backdrop-filter: blur(10px); /* 兼容 Safari */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2); /* 半透明边框 */
+    padding: 20px;
+    margin: 18px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .educationCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* 左侧校徽区域 */
+  .educationLeft {
+    flex: 0 0 80px; /* 固定宽度 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 24px;
+  }
+  
+  .schoolLogo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  /* 右侧学校名称和描述区域 */
+  .educationRight {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .schoolName {
+    font-size: 22px;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0 0 12px 0;
+  }
+  
+  .educationDescription {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    line-height: 1.6;
+  }
