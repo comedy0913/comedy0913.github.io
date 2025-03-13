@@ -665,3 +665,95 @@ footer {
     font-weight: bold; /* 加粗文本 */
     text-decoration: underline; /* 添加下划线 */
 }
+
+/* 整体卡片容器 */
+.glassCard {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.1); /* 半透明背景 */
+    border-radius: 16px;
+    backdrop-filter: blur(10px); /* 毛玻璃效果 */
+    -webkit-backdrop-filter: blur(10px); /* 兼容 Safari */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2); /* 半透明边框 */
+    padding: 10px;
+    margin: 18px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glassCard:hover {
+transform: translateY(-5px);
+box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* 左侧图片区域 */
+.glassImage {
+flex: 0 0 40%;
+max-width: 40%;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: rgba(255, 255, 255, 0.2); /* 半透明背景 */
+border-radius: 12px;
+padding: 0px;
+margin-right: 24px;
+}
+
+.glassImage img {
+width: 100%;
+border-radius: 8px;
+object-fit: cover;
+}
+
+/* 右侧内容区域 */
+.glassContent {
+flex: 1;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+/* 标题 */
+.glassTitle {
+font-size: 20px; /* 更大的字体 */
+font-weight: 600;
+margin: 0 0 12px 0;
+color: #ffffff; /* 白色文字 */
+}
+
+.glassTitle a {
+color: inherit;
+text-decoration: none;
+}
+
+.glassTitle a:hover {
+color: #aad8ff; /* 浅蓝色悬停效果 */
+text-decoration: underline;
+}
+
+/* 作者信息 */
+.glassAuthors {
+font-size: 20px; /* 更大的字体 */
+color: rgba(255, 255, 255, 0.8); /* 半透明白色 */
+margin: 0px;
+}
+
+/* 链接区域 */
+.glassActions {
+margin-top: 20px;
+}
+
+.glassLink {
+font-size: 19px; /* 更大的字体 */
+color: #ffffff; /* 白色文字 */
+text-decoration: none;
+margin-right: 25px;
+padding: 0px 0px;
+border: 1px solid rgba(255, 255, 255, 0.3); /* 半透明边框 */
+border-radius: 6px;
+transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.glassLink:hover {
+background-color: rgba(255, 255, 255, 0.2); /* 半透明背景 */
+color: #aad8ff; /* 浅蓝色悬停效果 */
+}
