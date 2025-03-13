@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monte Carlo Diffusion for Generalizable Learning-Based RANSAC</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./MCD/static/css/bulma.min.css">
+  <link rel="stylesheet" href="./MCD/static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./MCD/static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./MCD/static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./MCD/static/css/index.css">
+  <link rel="icon" href="./MCD/static/images/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./MCD/static/js/fontawesome.all.min.js"></script>
+  <script src="./MCD/static/js/bulma-carousel.min.js"></script>
+  <script src="./MCD/static/js/bulma-slider.min.js"></script>
+  <script src="./MCD/static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Self-Ensembling Gaussian Splatting for Few-Shot Novel View Synthesis</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://sailor-z.github.io/">Chen Zhao</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://comedy0913.github.io/">Jiale Wang</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://sites.google.com/view/tong-zhang">Tong Zhang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://gr.xjtu.edu.cn/en/web/wei.ke">Wei Ke</a><sup>2</sup>,</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>EPFL-CVLab,</span>
+            <span class="author-block"><sup>2</sup>Xi'an Jiaotong University,</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2503.09410"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- <span class="link-block">
+                <a href="https://arxiv.org/abs/2011.12948"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/comedy0913/MCD"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <!-- <span class="link-block">
+                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="far fa-images"></i>
+                  </span>
+                  <span>Data</span>
+                  </a> -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class = "has-text-centered">
+          <h2 class="title is-3">Novel View Synthesis</h2>
+        </div>
+        <br>
+        <div class="column content">
+          <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./SEGS/static/videos/nvs_results.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section> -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+          <img src=".\MCD\static\images\Advantages_of_MCD.png"
+          class=""
+          alt=""/>
+          Random Sample Consensus (RANSAC) is a fundamental approach for robustly estimating parametric models from noisy data. Existing learning-based RANSAC methods utilize deep learning to enhance the robustness of RANSAC against outliers. However, these approaches are trained and tested on the data generated by the same algorithms, leading to limited generalization to out-of-distribution data during inference. Therefore, in this paper, we introduce a novel diffusion-based paradigm that progressively injects noise into ground-truth data, simulating the noisy conditions for training learning-based RANSAC. To enhance data diversity, we incorporate Monte Carlo sampling into the diffusion paradigm, approximating diverse data distributions by introducing different types of randomness at multiple stages. We evaluate our approach in the context of feature matching through comprehensive experiments on the ScanNet and MegaDepth datasets. The experimental results demonstrate that our Monte Carlo diffusion mechanism significantly improves the generalization ability of learning-based RANSAC. We also develop extensive ablation studies that highlight the effectiveness of key components in our framework. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class = "has-text-centered">
+          <h2 class="title is-3">Method Overview</h2>
+        </div>
+        <br>
+          <img src=".\MCD\static\images\pipline.png"
+          class=""
+          alt=""/>
+          In our approach, we leverage a diffusion process to simulate noisy data for training a learning-based RANSAC algorithm. Specifically, given a set of ground-truth matches between two images, we first randomly split these matches into two subsets. One of the subsets undergoes processing through a Monte Carlo diffusion module with multi-stage randomization, generating multiple sets of noisy matches at different timesteps. During this process, by combining the other subset of matches, which is not processed by diffusion and considered as inliers, with samples from a specific timestep as outliers, we form the final diffused matches. The learning-based RANSAC is then trained on these generated noisy matches.
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+        <br>
+        <img src=".\MCD\static\images\Viz.png"
+        class=""
+        alt=""/>
+  </div>
+</section>
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class = "has-text-centered">
+          <h2 class="title is-3">Pseudo-View Renderings</h2>
+        </div>
+        <br>
+          <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+            <source src="./SEGS/static/videos/fern.mp4"
+                    type="video/mp4">
+          </video>
+    </div>
+  </div>
+</section> -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+        <br>
+        <video id="matting-video" autoplay controls muted loop playsinline style="width: 70%; height: auto;">
+          <source src="./projects\MCD\static\videos\scale_and_ratio.mp4"
+                  type="video/mp4">
+        </video>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+        <br>
+        <video id="matting-video" autoplay controls muted loop playsinline style="width: 70%; height: auto;">
+          <source src="./projects\MCD\static\videos\timestep_video.mp4"
+                  type="video/mp4">
+        </video>
+  </div>
+</section>
+
+
+<!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{park2021nerfies,
+  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
+  title     = {Nerfies: Deformable Neural Radiance Fields},
+  journal   = {ICCV},
+  year      = {2021},
+}</code></pre>
+  </div>
+</section> -->
+
+<footer class="footer">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is borrowed from <a
+              href="https://github.com/nerfies/nerfies.github.io">nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
