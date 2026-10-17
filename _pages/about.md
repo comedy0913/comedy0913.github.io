@@ -57,7 +57,7 @@ My research interests lie in 3D vision and world models. I am always open to col
 
 # 💻 Internships
 - *2026.06 - present*, [HorizonRobotics](https://www.horizonrobotics.com/), Algorithm Intern.
-- *2025.10 - 2026.01*, [OPPO研究院](https://www.oppo.com/en/proposal-2022/introduction/), Embodied AI Intern.
+- *2025.10 - 2026.01*, [OPPO Research Institute](https://www.oppo.com/en/proposal-2022/introduction/), Embodied AI Intern.
 
 # 📖 Educations
 - *2026.09 - present*, Ph.D. in Computer Science and Technology, Xi'an Jiaotong University. Jointly supervised by [Prof. Wei Ke](https://gr.xjtu.edu.cn/en/web/wei.ke) and [Prof. Tong Zhang](https://people.ucas.ac.cn/~tongzhang).
