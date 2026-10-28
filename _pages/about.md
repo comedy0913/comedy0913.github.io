@@ -32,7 +32,7 @@ My research interests lie in 3D vision and world models. I am always open to col
 
 **Jiale Wang\***, Chen Zhao\*, Haoyang Zhang, Yanhao Wu, Fei He, Yanhu Shan, Rui Wu, Wei Ke, Tong Zhang
 
-[**Paper**](https://arxiv.org/abs/2610.36760) \| [**Project**](https://comedy0913.github.io/projects/geogsplat)
+[**Project**](https://comedy0913.github.io/projects/geogsplat)
 
 \* Equal contribution.
 </div>
