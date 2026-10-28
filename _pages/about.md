@@ -17,12 +17,26 @@ I am a first-year Ph.D. student in Computer Science and Technology at [Xi'an Jia
 My research interests lie in 3D vision and world models. I am always open to collaboration — feel free to drop me an email!
 
 # 🔥 News
+- *2026.10*: &nbsp;🎉🎉 **GeoGSplat** is now available on arXiv.
 - *2026.09*: &nbsp;🎉🎉 I started my Ph.D. at XJTU, jointly supervised by Prof. Wei Ke and Prof. Tong Zhang.
 - *2026.06*: &nbsp;🎉🎉 One paper is accepted by **Neurocomputing**.
 - *2026.06*: &nbsp;💼 I joined HorizonRobotics as an Algorithm Intern.
 - *2025.11*: &nbsp;🎉🎉 One paper is accepted by **AAAI 2026**.
 
 # 📝 Publications 
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2026</div><img src='images/GeoGSplat.webp' alt="GeoGSplat" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[GeoGSplat: Geometry-Grounded Non-Pixel-Aligned Gaussian Splatting](https://arxiv.org/abs/2610.36760)
+
+**Jiale Wang\***, Chen Zhao\*, Haoyang Zhang, Yanhao Wu, Fei He, Yanhu Shan, Rui Wu, Wei Ke, Tong Zhang
+
+[**Paper**](https://arxiv.org/abs/2610.36760) \| [**Project**](https://comedy0913.github.io/projects/geogsplat)
+
+\* Equal contribution.
+</div>
+</div>
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">AAAI 2026</div><img src='images/MCD.png' alt="MCD" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
