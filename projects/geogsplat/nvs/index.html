@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GeoGSplat · NVS comparison</title>
+  <link rel="stylesheet" href="styles.css?v=3">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/addons/","@sparkjsdev/spark":"./vendor/spark.module.js"}}</script>
+  <script type="module" src="app.js?v=3"></script>
+</head>
+<body>
+  <main>
+    <header><p class="eyebrow">NOVEL VIEW SYNTHESIS</p><h1>NVS comparison</h1><p class="lead">Compare GeoGSplat and TokenGS from the same viewpoint.</p></header>
+    <div class="toolbar">
+      <div class="viewer-topline">
+        <div><span class="live-dot" aria-hidden="true"></span><strong id="scene-title">Loading…</strong><span class="level-tag" id="scene-level"></span></div>
+        <span class="viewer-count" id="viewer-count"></span>
+      </div>
+      <div class="picker-row">
+        <label>Example<select id="scene" disabled></select></label>
+        <p class="context-note" id="context-note">The same input views for both methods.</p>
+      </div>
+    </div>
+    <section aria-labelledby="live-title">
+      <h2 id="live-title" class="visually-hidden">Synchronized Gaussian rendering</h2>
+      <p class="note">Drag either image to rotate; scroll to zoom. Both cameras stay synchronized.</p>
+      <div class="pair">
+        <figure><figcaption><strong class="ours">GeoGSplat</strong><span id="ours-count"></span></figcaption><div class="viewport" id="ours-view"><img id="ours-poster" alt="GeoGSplat rendering preview" width="256" height="256"></div></figure>
+        <figure><figcaption><strong>TokenGS</strong><span id="tokengs-count"></span></figcaption><div class="viewport" id="tokengs-view"><img id="tokengs-poster" alt="TokenGS rendering preview" width="256" height="256"></div></figure>
+      </div>
+      <div class="playback"><button id="play" disabled>Play camera tour</button><button id="reset" disabled>Reset camera</button><input id="timeline" type="range" min="0" max="239" value="0" aria-label="Camera tour frame"><span id="frame-label">0 / 239</span></div>
+      <p id="status" role="status">Loading renderer…</p>
+      <div class="inputs"><span>Input views</span><div id="input-images"></div></div>
+    </section>
+    <footer>Both methods use the same inputs and cameras. Complete Gaussian predictions are rendered at 320 × 320 per view.</footer>
+  </main>
+</body>
+</html>

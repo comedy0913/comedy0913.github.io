@@ -1,0 +1,51 @@
+.nvs-section {
+  padding: 70px 0 52px;
+  background: var(--dark);
+  color: #eef4f5;
+}
+
+.nvs-section .eyebrow {
+  color: #6dd7c9;
+}
+
+.nvs-section .section-heading {
+  margin-bottom: 36px;
+}
+
+.nvs-section .section-heading > p {
+  color: #80949d;
+  max-width: 420px;
+}
+
+.nvs-section + .geometry-section {
+  border-top: 1px solid #1b2833;
+}
+
+.nvs-frame {
+  display: block;
+  width: 100%;
+  max-width: var(--viewer-width);
+  height: 560px;
+  margin: 0 auto;
+  border: 0;
+  background: transparent;
+}
+
+@media (max-width: 680px) {
+  .nvs-section {
+    padding: 47px 0 32px;
+  }
+
+  .nvs-section .section-heading {
+    margin-bottom: 27px;
+  }
+
+  .nvs-section .section-heading > p {
+    max-width: 340px;
+  }
+
+  .nvs-frame {
+    max-width: none;
+    height: 470px;
+  }
+}

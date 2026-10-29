@@ -11,14 +11,16 @@
   <meta property="og:image" content="assets/social-card.jpg">
   <title>GeoGSplat: Geometry-Grounded Non-Pixel-Aligned Gaussian Splatting</title>
   <link rel="icon" href="assets/favicon.svg?v=2" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=4">
-  <script type="module" src="app.js"></script>
+  <link rel="stylesheet" href="styles.css?v=8">
+  <link rel="stylesheet" href="nvs-section.css?v=5">
+  <script type="module" src="app.js?v=3"></script>
+  <script type="module" src="nvs-embed.js?v=3"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <a class="brand" href="#" aria-label="GeoGSplat home">GeoGSplat<span class="brand-dot">.</span></a>
-    <nav aria-label="Main navigation"><a href="#explore">Point-cloud comparison</a><a href="#novel-views">Qualitative comparison</a><a href="#method">Method</a><a href="#results">Main results</a></nav>
+    <nav aria-label="Main navigation"><a href="#rendering">NVS comparison</a><a href="#explore">Point-cloud comparison</a><a href="#qualitative">Qualitative comparison</a><a href="#method">Method</a><a href="#results">Main results</a></nav>
     <a class="header-paper" href="https://arxiv.org/abs/2610.36760" target="_blank" rel="noopener" aria-label="Read the paper on arXiv">Paper <span aria-hidden="true">↗</span></a>
   </header>
   <main id="main">
@@ -41,6 +43,20 @@
       <div><p class="eyebrow">OVERVIEW</p><h2 id="idea-title">Abstract</h2></div>
       <div class="intro-copy"><p>Feed-forward Gaussian Splatting enables efficient novel view synthesis. Pixel-aligned prediction makes the primitive count grow with image resolution and view count, introducing redundancy. Non-pixel-aligned methods predict a fixed number of Gaussians, but without explicit geometric constraints, misplaced centers can cause rendering artifacts under large viewpoint changes.</p><p><strong>GeoGSplat incorporates geometric priors into non-pixel-aligned prediction.</strong> A dual-branch structured encoder constructs Anchors and Triplane to capture coarse 3D structure and fine-grained scene features. A geometry-guided hierarchical decoder progressively predicts dense 3D points and Gaussian primitives. Experiments on DTU and NRGBD show improvements in novel view synthesis and 3D reconstruction, with a larger advantage over TokenGS as target viewpoints move farther from the input cameras.</p><a class="text-link" href="#method">Dual-branch encoder and hierarchical decoder <span aria-hidden="true">↗</span></a></div>
       <div class="highlights"><div><span class="metric-number">65,536</span><span>Predicted Gaussians, independent of input-view count</span></div><div><span class="metric-number">20.48 <small>dB</small></span><span>DTU PSNR with four input views · TokenGS: 17.71 dB</span></div><div><span class="metric-number">0.017</span><span>NRGBD Chamfer distance · TokenGS: 0.277 · Four input views</span></div></div>
+    </section>
+
+    <section id="rendering" class="nvs-section" aria-labelledby="rendering-title">
+      <div class="section-wrap">
+        <div class="section-heading"><div><p class="eyebrow">NOVEL VIEW SYNTHESIS</p><h2 id="rendering-title">NVS comparison</h2></div><p>Gaussian rendering from the same viewpoint.<br>Rotate either view to compare both methods.</p></div>
+        <div class="scene-selection" aria-labelledby="nvs-selection-title">
+          <div class="scene-selection-heading"><h3 id="nvs-selection-title">Reconstruction examples</h3><p>Select a scene to update the comparison below.</p></div>
+          <div class="scene-categories" id="nvs-categories" aria-label="Filter examples by scale"><button class="active" data-level="All" aria-pressed="true">All examples</button><button data-level="Object" aria-pressed="false">Object-level</button><button data-level="Scene" aria-pressed="false">Scene-level</button></div>
+          <div class="scene-strip" id="nvs-strip" aria-label="Choose a scene"></div>
+        </div>
+        <iframe id="nvs-frame" class="nvs-frame" src="nvs/index.html?embed&amp;v=5" title="Interactive GeoGSplat and TokenGS Gaussian rendering comparison" loading="lazy"></iframe>
+        <p class="section-note dark-note">Both methods render 65,536 Gaussians per frame at 320 × 320 from the same cameras.</p>
+        <noscript><p>Enable JavaScript to explore the reconstructions. The qualitative comparisons below remain available.</p></noscript>
+      </div>
     </section>
 
     <section id="explore" class="geometry-section" aria-labelledby="geometry-title">
@@ -78,18 +94,20 @@
             <div class="viewer-buttons"><button id="auto-rotate" class="icon-button" aria-pressed="false" title="Turn auto-rotation on">↻ <span>Auto rotate</span></button><button id="reset-camera" class="icon-button" title="Reset camera">⟲ <span>Reset</span></button><button id="fullscreen" class="icon-button" title="Enter fullscreen">⛶ <span>Fullscreen</span></button></div>
           </div>
         </div>
-        <div class="observation-row"><span>Context images</span><div id="input-thumbnails" class="input-thumbnails"></div><p id="geometry-detail">Same context views and coordinate system for both methods.</p></div>
         <p class="section-note dark-note" id="geometry-protocol">All 65,536 Gaussian centers per method, in a shared coordinate system.</p>
       </div>
     </section>
 
-    <section id="novel-views" class="novel-section section-wrap" aria-labelledby="novel-title">
-      <div class="section-heading"><div><p class="eyebrow">NOVEL VIEW SYNTHESIS</p><h2 id="novel-title">Qualitative comparison</h2></div><p>Figure 4: novel view synthesis<br>with four input views.</p></div>
-      <div class="paper-comparison-grid">
-        <figure class="paper-comparison"><figcaption><span>01 / OBJECT-LEVEL</span><strong>Object detail</strong></figcaption><img src="assets/figures/nvs-dtu.png" width="733" height="456" alt="Object-level novel-view comparisons from paper Figure 4: GT, AnySplat with ground-truth poses, TokenGS, and GeoGSplat. Red boxes highlight object markings." loading="lazy"></figure>
-        <figure class="paper-comparison"><figcaption><span>02 / SCENE-LEVEL</span><strong>Scene structure</strong></figcaption><img src="assets/figures/nvs-nrgbd.png" width="733" height="456" alt="Scene-level novel-view comparisons from paper Figure 4: GT, AnySplat with ground-truth poses, TokenGS, and GeoGSplat. Red boxes highlight kitchen objects and chair geometry." loading="lazy"></figure>
-      </div>
-      <div class="paper-comparison-caption"><p class="section-note">Columns show ground truth, AnySplat*, TokenGS, and GeoGSplat. Red boxes highlight blurred details in TokenGS and shifted or duplicated structures in AnySplat*. GeoGSplat preserves finer details and more accurate scene structures in these regions. AnySplat* uses ground-truth poses. Original images and annotations are retained from the paper.</p><a class="text-link" href="assets/downloads/comparison.pdf" target="_blank" rel="noopener">Original Figure 4 ↗</a></div>
+    <section id="qualitative" class="novel-section section-wrap" aria-labelledby="qualitative-title">
+      <div class="section-heading"><div><p class="eyebrow">QUALITATIVE ANALYSIS</p><h2 id="qualitative-title">Qualitative comparison</h2></div><p>Figure 4: novel views with four inputs.<br>Figure 6: recovered geometry on NRGBD.</p></div>
+      <figure class="analysis-figure" aria-labelledby="fig4-caption">
+        <a class="analysis-figure-media" href="assets/downloads/comparison.pdf" target="_blank" rel="noopener" aria-label="Open the original Figure 4"><img src="assets/figures/comparison.webp" width="1760" height="548" alt="Figure 4: novel-view comparisons across ground truth, AnySplat with ground-truth poses, TokenGS, and GeoGSplat. Red boxes highlight blurred details in TokenGS and shifted or duplicated structures in AnySplat." loading="lazy"></a>
+        <figcaption id="fig4-caption"><p><span class="figure-number">FIGURE 4 / NOVEL VIEW SYNTHESIS</span> Qualitative novel view synthesis with four input views. Columns show ground truth, AnySplat*, TokenGS, and GeoGSplat from left to right. Red boxes highlight blurred details in TokenGS and shifted or duplicated structures in AnySplat*. TokenGS blurs object markings on DTU and textures on NRGBD; AnySplat* is sharper but duplicates or distorts structures due to inconsistent depth across views. GeoGSplat preserves finer details and more accurate scene structures in these regions. AnySplat* uses ground-truth poses.</p><a class="text-link" href="assets/downloads/comparison.pdf" target="_blank" rel="noopener">Original Figure 4 ↗</a></figcaption>
+      </figure>
+      <figure class="analysis-figure" aria-labelledby="fig6-caption">
+        <a class="analysis-figure-media" href="assets/downloads/multiview.pdf" target="_blank" rel="noopener" aria-label="Open the original Figure 6"><img src="assets/figures/multiview.webp" width="2164" height="610" alt="Figure 6: NRGBD geometry comparisons across ground truth, TokenGS Gaussian centers, opacity-filtered TokenGS centers, TokenGS depth-unprojected points, and GeoGSplat dense points." loading="lazy"></a>
+        <figcaption id="fig6-caption"><p><span class="figure-number">FIGURE 6 / GEOMETRY</span> 3D reconstruction on NRGBD. From left to right: ground truth, TokenGS Gaussian centers, opacity-filtered TokenGS centers, points unprojected from depth rendered by TokenGS, and GeoGSplat dense points. TokenGS contains substantial geometric outliers that remain after opacity filtering, while its depth-based reconstruction is also displaced from the ground truth. GeoGSplat predicts points closer to the ground-truth geometry and provides more complete scene coverage.</p><a class="text-link" href="assets/downloads/multiview.pdf" target="_blank" rel="noopener">Original Figure 6 ↗</a></figcaption>
+      </figure>
     </section>
 
     <section id="method" class="method-section section-wrap" aria-labelledby="method-title">

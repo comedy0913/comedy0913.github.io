@@ -1,0 +1,98 @@
+[
+  {
+    "id": "dtu_00101",
+    "title": "Laughing Buddha",
+    "level": "Object-level",
+    "base": "assets/dtu_00101/",
+    "counts": {
+      "ours": {
+        "full": 65536,
+        "sh_degree": 3
+      },
+      "tokengs": {
+        "full": 65536,
+        "sh_degree": 0
+      }
+    },
+    "inputs": 4,
+    "inputFiles": [
+      "input-0.webp",
+      "input-1.webp",
+      "input-2.webp",
+      "input-3.webp"
+    ],
+    "trajectory": "trajectory.json"
+  },
+  {
+    "id": "dtu_00106",
+    "title": "Carved dragon",
+    "level": "Object-level",
+    "base": "assets/dtu_00106/",
+    "counts": {
+      "ours": {
+        "full": 65536,
+        "sh_degree": 3
+      },
+      "tokengs": {
+        "full": 65536,
+        "sh_degree": 0
+      }
+    },
+    "inputs": 4,
+    "inputFiles": [
+      "input-0.webp",
+      "input-1.webp",
+      "input-2.webp",
+      "input-3.webp"
+    ],
+    "trajectory": "trajectory.json"
+  },
+  {
+    "id": "nrgbd_00022",
+    "title": "Kitchen interior",
+    "level": "Scene-level",
+    "base": "assets/nrgbd_00022/",
+    "counts": {
+      "ours": {
+        "full": 65536,
+        "sh_degree": 3
+      },
+      "tokengs": {
+        "full": 65536,
+        "sh_degree": 0
+      }
+    },
+    "inputs": 4,
+    "inputFiles": [
+      "input-0.webp",
+      "input-1.webp",
+      "input-2.webp",
+      "input-3.webp"
+    ],
+    "trajectory": "trajectory.json"
+  },
+  {
+    "id": "scannetpp_00040",
+    "title": "Kitchen workspace",
+    "level": "Scene-level",
+    "base": "assets/scannetpp_00040/",
+    "counts": {
+      "ours": {
+        "full": 65536,
+        "sh_degree": 3
+      },
+      "tokengs": {
+        "full": 65536,
+        "sh_degree": 0
+      }
+    },
+    "inputs": 4,
+    "inputFiles": [
+      "input-0.webp",
+      "input-1.webp",
+      "input-2.webp",
+      "input-3.webp"
+    ],
+    "trajectory": "trajectory.json"
+  }
+]

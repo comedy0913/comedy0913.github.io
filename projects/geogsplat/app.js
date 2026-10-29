@@ -132,12 +132,9 @@ function configureDisplay() {
   element('token-poster').classList.remove('loaded');
   element('point-canvas').style.visibility = 'hidden';
   element('token-canvas').style.visibility = 'hidden';
-  element('geometry-detail').textContent = comparing
-    ? `${currentScene.comparison.inputViews} context views per method · All 65,536 Gaussian centers · Synchronized cameras`
-    : `${currentScene.inputViews} input views · GeoGSplat reconstruction demonstration · All predicted points`;
-  element('geometry-summary').textContent = comparing
-    ? 'GeoGSplat and original TokenGS Gaussian centers. Both models use the same context views.'
-    : 'Selected GeoGSplat reconstruction demonstration. Switch to comparison for the same-context baseline results.';
+  element('geometry-summary').innerHTML = comparing
+    ? 'GeoGSplat and original TokenGS Gaussian centers.<br>Both models use the same context views.'
+    : 'Selected GeoGSplat reconstruction demonstration.<br>Switch to comparison for the same-context baseline results.';
   element('geometry-protocol').textContent = comparing
     ? 'Both models use the same context views. All 65,536 Gaussian centers are shown in a shared coordinate system, without opacity filtering or point removal. Both sides use the same context-image color projection; unsupported points remain gray.'
     : 'This is a separate GeoGSplat reconstruction demonstration, not a baseline or novel view synthesis comparison. All predicted dense points or Gaussian centers are retained. Colors are projected from context images; unsupported points remain gray.';
@@ -230,12 +227,6 @@ function selectScene(identifier) {
   element('viewer-poster').alt = `${scene.title} point-cloud preview`;
   element('token-poster').alt = `TokenGS Gaussian centers: ${scene.title}`;
   configureDisplay();
-  element('input-thumbnails').replaceChildren(...scene.inputs.map((path, index) => {
-    const image = document.createElement('img');
-    image.src = `${scene.base}${path}`;
-    image.alt = `${scene.title}: observed image ${index + 1}`;
-    return image;
-  }));
   renderSceneStrip();
   loadGeometry();
 }
